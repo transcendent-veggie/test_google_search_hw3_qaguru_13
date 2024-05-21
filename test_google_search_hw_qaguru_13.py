@@ -16,5 +16,5 @@ def test_search_google(browser_open):
 
 def test_search_negative_results(browser_open):
     browser.open('https://www.google.com/')
-    browser.element('[name="q"]').should(be.blank).type('wikipedia').press_enter()
-    assert browser.element('#search').should(have.text('asdasdasdasd'))
+    browser.element('[name="q"]').should(be.blank).type('-тест').press_enter()
+    assert browser.element('#botstuff').should(have.text(' ничего не найдено.'))
